@@ -55,24 +55,24 @@ export default function SignUp() {
       <Title title={'signUp'}/>
       <section onSubmit={submit}>
         <h2 className='mt-28  text-center text-5xl'>SignUp Here</h2>
-        <div className="wrapper mx-auto w-[60%] h-full">
-            <form action=""  className=' shadow-lg mt-16 w-fit mx-auto px-20 py-28 bg-slate-100 rounded-2xl flex flex-col gap-12'>
+        <div className="wrapper mx-auto w-full md:w-[60%] h-full">
+            <form action=""  className=' shadow-lg mt-16 w-fit mx-auto sm:px-20 px-4 py-28 bg-slate-100 rounded-2xl flex flex-col gap-12'>
                 <div className='mx-auto flex gap-4 p-4 items-center '>
                     <span className=' text-4xl text-orange-500  '><AiOutlineUser/></span>
-                    <input onChange={((e)=>setName(e.target.value))} required placeholder='Name' className='pr-8 bg-slate-100 h-12 text-neutral-600 py-8 text-3xl border-b-2 border-orange-200 outline-none' type="text" />
+                    <input onChange={((e)=>setName(e.target.value))} required placeholder='Name' className='w-[90%] sm:w-[unset] pr-8 bg-slate-100 h-12 text-neutral-600 py-8 text-3xl border-b-2 border-orange-200 outline-none' type="text" />
                 </div>
                 <div className='mx-auto flex gap-4 p-4 items-center '>
                     <span className=' text-4xl text-orange-500  '><MdEmail/></span>
-                    <input onChange={((e)=>setEmail(e.target.value))} required placeholder='Email' className='pr-8 bg-slate-100 h-12 text-neutral-600 py-8 text-3xl border-b-2 border-orange-200 outline-none' type="text" />
+                    <input onChange={((e)=>setEmail(e.target.value))} required placeholder='Email' className='w-[90%] sm:w-[unset] pr-8 bg-slate-100 h-12 text-neutral-600 py-8 text-3xl border-b-2 border-orange-200 outline-none' type="text" />
                 </div>
                 <div className='mx-auto relative flex gap-4 p-4 items-center '>
                     <span className=' text-orange-500 text-4xl'><RiLockPasswordLine/></span>
-                    <input onChange={((e)=>setPassword(e.target.value))} ref={inputOne} type='password' required placeholder='Password' className='h-12 outline-none bg-slate-100  py-8 pr-8 text-3xl border-b-2 border-orange-200'  />
+                    <input onChange={((e)=>setPassword(e.target.value))} ref={inputOne} type='password' required placeholder='Password' className='w-[90%] sm:w-[unset] h-12 outline-none bg-slate-100  py-8 pr-8 text-3xl border-b-2 border-orange-200'  />
                     <span  onClick={show} className='cursor-pointer right-0 absolute text-4xl'>{!change?<AiFillEye/>:<AiFillEyeInvisible/>}</span>
                 </div>
                 <div className='mx-auto relative flex gap-4 p-4 items-center '>
                     <span className=' text-orange-500 text-4xl'><RiLockPasswordLine/></span>
-                    <input onChange={((e)=>setCPassword(e.target.value))} ref={inputTwo} type='password' required placeholder='Confirm Password' className='h-12 outline-none bg-slate-100  py-8 pr-8 text-3xl border-b-2 border-orange-200'  />
+                    <input onChange={((e)=>setCPassword(e.target.value))} ref={inputTwo} type='password' required placeholder='Confirm Password' className='w-[90%] sm:w-[unset] h-12 outline-none bg-slate-100  py-8 pr-8 text-3xl border-b-2 border-orange-200'  />
                     <span  onClick={show} className='cursor-pointer right-0 absolute text-4xl'>{!change?<AiFillEye/>:<AiFillEyeInvisible/>}</span>
                 </div>
                 <button className='bg-orange-500 w-fit mx-auto p-4 rounded-lg text-4xl '>Sign Up</button>

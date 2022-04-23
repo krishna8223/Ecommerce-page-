@@ -21,7 +21,7 @@ function ProductCard({data}) {
     }
   return (
       <>
-            <div className="product bg-white max-w-2xl shadow-lg  rounded-lg p-8" >
+            <div className="product lg:[width:clamp(33rem,30vw,42rem)] md:[width:clamp(34rem,46vw,50rem)] sm:[width:clamp(50rem,37vw,49rem)] [width:clamp(31rem,68vw,49rem)]   bg-white max-w-2xl shadow-lg  rounded-lg p-8" >
               <div className="product__image flex justify-center items-center ">
                 <Image 
                 loader={(l)=>image}

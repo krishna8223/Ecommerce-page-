@@ -48,7 +48,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex mt-1 bg-slate-900 py-8 justify-around'>
+      <div className='flex mt-1 flex-wrap gap-4  bg-slate-900 py-8 justify-around'>
         <button onClick={() => { changeCat('all', this) }} ref={(element) => { categoriesAll.current[this] = element }} className='text-3xl p-4 text-white rounded-lg bg-orange-700 hover:bg-orange-600 duration-100' >All Products</button>
         {categorys.map((e, i) => {
           return <button key={i} ref={(element) => { categoriesAll.current[e] = element }} onClick={() => { changeCat(e, this) }} className='text-3xl p-4 text-white rounded-lg bg-orange-700 hover:bg-orange-600 duration-300' >{e}</button>
@@ -64,7 +64,7 @@ export default function Home({ data }) {
       </div>
       {products.state == 'loaded' ?
 
-        <div className=" p-12 all-products place-items-center bg-slate-100 grid-cols-3 gap-32 grid ">
+        <div className=" p-12 all-products place-items-center bg-slate-100 md:grid-cols-2 lg:grid-cols-3 gap-32 grid ">
           {products.products.map((e) => {
             return <ProductCard key={e.id} data={e} />
           })}
