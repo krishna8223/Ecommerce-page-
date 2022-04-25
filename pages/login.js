@@ -1,19 +1,18 @@
 import React, { useRef, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import cookies from 'js-cookie'
-
 import Title from '../components/title'
+
+import { useRouter } from 'next/router'
 import { toast } from '../components/toast'
+import { update } from '../store/isUserSlice'
+import { useDispatch } from 'react-redux'
 
 // Icons
 import { RiLockPasswordLine } from 'react-icons/ri'
 import { AiFillEye } from 'react-icons/ai'
 import { AiFillEyeInvisible } from 'react-icons/ai'
 import { MdEmail } from 'react-icons/md'
-import { useDispatch } from 'react-redux'
-import { update } from '../store/isUserSlice'
-import { redirect } from 'next/dist/server/api-utils'
 
 
 
@@ -42,7 +41,7 @@ export default function Login() {
         if (user.status == 200) {
             toast('Login successfull')
             router.push('/')
-            dispatch(update({active:true,name:response.data.userName}))
+            dispatch(update({ active: true, name: response.data.userName }))
             cookies.set('user', JSON.stringify(response.data))
         } else {
             toast('Wrong Credentials')
@@ -88,17 +87,17 @@ export default function Login() {
 export async function getServerSideProps(context) {
     const user = context.req.cookies.user
     console.log(user);
-    if (user )  {
+    if (user) {
         return {
 
-            redirect:{
-                destination:'/',
-                permanent:false
+            redirect: {
+                destination: '/',
+                permanent: false
             }
         }
     }
-    
+
     return {
-        props: {  }
-      }
+        props: {}
+    }
 }

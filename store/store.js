@@ -8,7 +8,7 @@ import userSlice from "./isUserSlice";
 const combinedReducers = combineReducers({
     cart:cartSlice,
     catogery:cagtagorysSlice,
-    user:userSlice
+    user:userSlice,
 }) 
 
 

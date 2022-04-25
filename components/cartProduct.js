@@ -3,11 +3,17 @@ import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 import { remove } from '../store/cartSlice'
 
+
 function CartProduct({data}) {
   const dispatch = useDispatch()
     const {id,image,title,price} = data
+   
+
+ 
+
+
   return (
-    <div className='flex justify-between items-center max-h-60 min-h-[15rem] rounded-lg overflow-hidden product mb-8  bg-gray-200 '>
+    <div  className='flex justify-between items-center max-h-60 min-h-[15rem] rounded-lg overflow-hidden product mb-8  bg-gray-200 '>
       <div className='flex'>
 
         <div className=" relative img flex items-center  overflow-hidden w-[13rem]  h-[15rem]">
