@@ -24,25 +24,27 @@ export default function SignUp() {
 
     const submit = async (e) => {
         e.preventDefault()
-        if(password!==Cpassword){
-            toast('Passwords are not matching')
-            return
-        }
-        const user =await fetch('http://localhost:3000/api/user',{
-            method:'POST',
-            body:JSON.stringify({
-                name,email,password
-            }),
-            headers:{
-                'Content-Type':'Application/Json'
-            }
-        })
-        const response =await user.json()
-        console.log(response);
-        if(user.status==200){
-            toast('Registeration Successful! Please Login')
+        // if(password!==Cpassword){
+        //     toast('Passwords are not matching')
+        //     return
+        // }
+        // const user =await fetch('http://localhost:3000/api/user',{
+        //     method:'POST',
+        //     body:JSON.stringify({
+        //         name,email,password
+        //     }),
+        //     headers:{
+        //         'Content-Type':'Application/Json'
+        //     }
+        // })
+        // const response =await user.json()
+        // console.log(response);
+        // if(user.status==200){
+            // router.push('/login')
+            // toast('Registeration Successful! Please Login')
+            // }
             router.push('/login')
-        }
+            toast('Registeration Successful! Please Login')
     }
 
     const show = () => {

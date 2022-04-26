@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import {add} from '../store/cartSlice'
 import  { toast } from './toast'
-import { produceWithPatches } from 'immer'
 
 
 
@@ -15,59 +14,64 @@ function ProductCard({data}) {
 
     // Add to cart 
     const addToCart = (product) => {
-      if (user) {
+      if (user.active) {
         
         dispatch(add(data))
         toast('Product Added to cart')
       }
+      else{
+        toast('Please login...')
+      }
     }
+
+    // Uncomment this for showing animation on scroll.........
+
 
     // For animation
       
-      if (typeof window !== "undefined") {
-        const products = [...document.getElementsByClassName('product')]
+//       if (typeof window !== "undefined") {
+//         const products = [...document.getElementsByClassName('product')]
 
-        const WindowPercentage = (80*window.innerHeight) / 100 // Calculating window percentage .. 80%
+//         const WindowPercentage = (80*window.innerHeight) / 100 // Calculating window percentage .. 80%
 
-        // To show top products cards...
-        products.forEach(e=>{
-          const top = e.getBoundingClientRect().top
-          
-          if(top < WindowPercentage){
-              e.classList.add('show')
-            }
-            else{
-              e.classList.remove('show')
+//         // To show top products cards...
+//         products.forEach(e=>{
+//           const top = e.getBoundingClientRect().top
+//           e.classList.add('hide')
+//           if(top < WindowPercentage){
+//               e.classList.add('show')
+//             }
+//             else{
+//               e.classList.remove('show')
             
-            }
-          })
+//             }
+//           })
 
-          // Animate on scroll
-        document.addEventListener('scroll',(e)=>{
-          console.log(WindowPercentage);
+//           // Animate on scroll
+//         document.addEventListener('scroll',(e)=>{
 
           
-            products.forEach(e=>{
-              const top = e.getBoundingClientRect().top
-              
-              if(top < WindowPercentage){
-                  e.classList.add('show')
-                }
-                else{
-                  e.classList.remove('show')
+//             products.forEach(e=>{
+//               const top = e.getBoundingClientRect().top
+//               e.classList.add('hide')
+//               if(top < WindowPercentage){
+//                   e.classList.add('show')
+//                 }
+//                 else{
+//                   e.classList.remove('show')
                 
-                }
-              })
-})
-}
+//                 }
+//               })
+// })
+// }
     
 
   return (
       <>
-            <div  className="hide product lg:[width:clamp(33rem,30vw,42rem)] md:[width:clamp(34rem,46vw,50rem)] sm:[width:clamp(50rem,37vw,49rem)] [width:clamp(31rem,68vw,49rem)]   bg-white max-w-2xl shadow-lg  rounded-lg p-8" >
+            <div  className=" product lg:[width:clamp(33rem,30vw,42rem)] md:[width:clamp(34rem,46vw,50rem)] sm:[width:clamp(50rem,37vw,49rem)] [width:clamp(31rem,68vw,49rem)]   bg-white max-w-2xl shadow-lg  rounded-lg p-8" >
               <div className="product__image flex justify-center items-center ">
                 <Image 
-                loader={(l)=>image}
+                // loader={}
                   src={image}
                   alt='title'
                   width={200}

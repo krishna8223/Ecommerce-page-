@@ -6,6 +6,8 @@ import bcrypt from 'bcrypt'
 
 DB()
 
+
+
 const CheckUser =async (req,res) => {
     const {email,password} = req.body
     const userPassword =await User.findOne({email})

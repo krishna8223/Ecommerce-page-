@@ -28,21 +28,24 @@ export default function Login() {
 
     const submit = async (e) => {
         e.preventDefault()
-        const user = await fetch('http://localhost:3000/api/login', {
-            method: 'POST',
-            body: JSON.stringify({
-                email, password
-            }),
-            headers: {
-                'Content-Type': 'Application/Json'
-            }
-        })
-        const response = await user.json()
-        if (user.status == 200) {
+        
+        // const user = await fetch('http://localhost:3000/api/login', {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         email, password
+        //     }),
+        //     headers: {
+        //         'Content-Type': 'Application/Json'
+        //     }
+        // })
+        // const response = await user.json()
+
+
+        if (email == 'abc@abc.com' && password == 'abc') {
             toast('Login successfull')
             router.push('/')
-            dispatch(update({ active: true, name: response.data.userName }))
-            cookies.set('user', JSON.stringify(response.data))
+            dispatch(update({ active: true, name: 'abc' }))
+            cookies.set('user', JSON.stringify({userName:'abc'}))
         } else {
             toast('Wrong Credentials')
         }
@@ -59,6 +62,7 @@ export default function Login() {
                 <h2 className='mt-28  text-center text-5xl'>Login Here</h2>
                 <div className="wrapper mx-auto w-full md:w-[60%] h-full">
                     <form action="" required className=' shadow-lg mt-16 w-fit mx-auto sm:px-20 px-4 py-28 bg-slate-100 rounded-2xl flex flex-col gap-12'>
+                        <p className='text-3xl my-8'> use <span className='text-orange-500'> abc@abc.com </span> for email and <span className='text-orange-500'> abc </span> for password</p>
                         <div className='mx-auto flex gap-4 p-4 items-center '>
                             <span className=' text-4xl text-orange-500  '><MdEmail /></span>
                             <input onChange={((e) => setEmail(e.target.value))} required placeholder='Email' className='pr-8 bg-slate-100 h-12 text-neutral-600 w-[90%] sm:w-[unset] py-8 text-3xl border-b-2 border-orange-200 outline-none' type="text" />
@@ -75,7 +79,6 @@ export default function Login() {
                                 <a className='text-orange-500'> SignUp Here</a>
                             </Link>
                         </p>
-
                     </form>
                 </div>
             </section>

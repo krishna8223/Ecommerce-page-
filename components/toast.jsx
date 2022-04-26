@@ -6,6 +6,7 @@ function Toast() {
   const [message, setMessage] = useState('')
   let timeout;
   toast = (value) => {
+    console.log('called');
 
     setMessage(value)
     div.current.style.transform = 'translateX(-100%)'
@@ -20,7 +21,7 @@ function Toast() {
   }
 
   return (
-    <div ref={div} className='[transform:translateX(-110%)] text-4xl p-8 z-40  duration-300 hide fixed top-40   rounded-r-2xl bg-orange-400'>{message}</div>
+    <div ref={div} className='[transform:translateX(-110%)] text-4xl p-8 z-40  duration-300  fixed top-40   rounded-r-2xl bg-orange-400'>{message}</div>
   )
 }
 
