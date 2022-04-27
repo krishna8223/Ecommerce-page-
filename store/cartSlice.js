@@ -13,7 +13,7 @@ const cartSlice = createSlice({
             return state.filter((e)=> e.id !== action.payload)
         },
         clearAll(state,action){
-         return  action.payload
+          state.length = 0
             
         }
     }

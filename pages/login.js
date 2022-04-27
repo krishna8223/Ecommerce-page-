@@ -59,9 +59,9 @@ export default function Login() {
         <>
             <Title title={'login'} />
             <section onSubmit={submit}>
-                <h2 className='mt-28  text-center text-5xl'>Login Here</h2>
+                <h2 className='sm:mt-28 my-[2.5rem] text-center text-5xl'>Login Here</h2>
                 <div className="wrapper mx-auto w-full md:w-[60%] h-full">
-                    <form action="" required className=' shadow-lg mt-16 w-fit mx-auto sm:px-20 px-4 py-28 bg-slate-100 rounded-2xl flex flex-col gap-12'>
+                    <form action="" required className=' shadow-lg  w-[30.1rem]   mx-auto  sm:px-20 px-4 py-28 bg-slate-100 rounded-2xl flex flex-col gap-12'>
                         <p className='text-3xl my-8'> use <span className='text-orange-500'> abc@abc.com </span> for email and <span className='text-orange-500'> abc </span> for password</p>
                         <div className='mx-auto flex gap-4 p-4 items-center '>
                             <span className=' text-4xl text-orange-500  '><MdEmail /></span>

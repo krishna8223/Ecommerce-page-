@@ -39,7 +39,7 @@ function Header() {
         {
           user.active ?
             <>
-              <button  className='flex justify-center items-center p-4 rounded-lg  text-white text-3xl gap-2 bg-orange-400' > Welcome : : {user.name}</button>
+              <button  className='sm:flex justify-center items-center p-4 rounded-lg hidden text-white text-3xl gap-2 bg-orange-400' > Welcome : : {user.name}</button>
               <div className="nav__cart-div relative">
                 <div className="text-white top-[-10px] h-[2rem] w-[2rem] rounded-lg flex justify-center items-center right-[-10px] bg-blue-700 count absolute">{cartProduct.length}</div>
                 <Link href="/cart">

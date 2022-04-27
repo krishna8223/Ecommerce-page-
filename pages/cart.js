@@ -5,12 +5,12 @@ import { clearAll } from '../store/cartSlice';
 
 function Cart() {
   const dispatch = useDispatch()
-  const products = useSelector((state)=>state.cart)
-
+  
   const clearCart  = () => {
-    console.log(';clearded');
-    dispatch(clearAll([]))
+    dispatch(clearAll())
   }
+  const products = useSelector((state)=>state.cart)
+  
   return (
     <section className='cart '>
 
@@ -18,14 +18,14 @@ function Cart() {
       {
         products.length>=1?
         
-          products.map((e)=>{
+          products.map((e,index)=>{
             return (
-              <CartProduct key={e.id} data = {e}/>
+              <CartProduct key={index} data = {e}/>
               )
             })
             
             :
-            <h1 className='text-[3rem] text-center'>Your Cart is empty please add items to cart.. </h1>
+            <h1 className='sm:text-[3rem] text-[2rem] text-center'>Your Cart is empty please add items to cart.. </h1>
             
           }
           {

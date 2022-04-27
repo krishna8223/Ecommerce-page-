@@ -103,7 +103,7 @@ export default function Home({ data }) {
         <div className='relative'>
           <button onClick={show} className='  text-4xl fitler-icon'><FcFilledFilter /></button>
           {/* <Filters/> */}
-          <div ref={filterBox}  className='h-[40rem] hidden p-8 w-[70rem] left-[-65rem] z-10 bg-orange-100 absolute'>
+          <div ref={filterBox}  className='h-[40rem] hidden p-8 w-[40rem] left-[-35rem] sm:w-[70rem] sm:left-[-65rem] z-10 bg-orange-100 absolute'>
             <p className='text-3xl '>Price</p>
             <input type="range" min='0' onInput={rangeValue} max='500' className='my-8 w-1/2' />
             <p className="range-value text-orange-400 text-3xl">${range}</p>

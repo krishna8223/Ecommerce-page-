@@ -11,7 +11,6 @@ function CartProduct({data}) {
 
  
 
-
   return (
     <div  className='flex justify-between items-center max-h-60 min-h-[15rem] rounded-lg overflow-hidden product mb-8  bg-gray-200 '>
       <div className='flex'>
