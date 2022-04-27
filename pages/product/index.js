@@ -37,7 +37,7 @@ function Slug({data}) {
           />
           </div>
           <div className="product-page__details">
-            <h2 className="product-page__title text-[4rem] sm:text-8xl">{title}</h2>
+            <h2 className="product-page__title text-[3.2rem] sm:text-[4rem]">{title}</h2>
             <p className=" text-red-500 text-4xl mt-12 product-page__price">Price: <span className='text-green-500'> ${price} </span></p>
             <p className="product-page__description text-3xl text-gray-500 my-12 ">{description}</p>
             <p className="product-page__rating text-3xl text-green-500">Rating : {rate} from {count} peoples</p>
